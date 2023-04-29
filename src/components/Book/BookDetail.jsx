@@ -13,7 +13,7 @@ const BookDetail = () => {
     const id = useParams().id;
     useEffect(()=>{
         const fetchHandler = async() =>{
-            await axios.get(`http://localhost:5000/books/${id}`)
+            await axios.get(`https://mern-curd-q6nt.onrender.com/books/${id}`)
                 .then((res)=> res.data)
                 .then(data => setInputs(data.book))
         }
@@ -21,7 +21,7 @@ const BookDetail = () => {
     },[id]);
 
     const sendRequest = async() =>{
-        await axios.put(`http://localhost:5000/books/${id}`,{
+        await axios.put(`https://mern-curd-q6nt.onrender.com/books/${id}`,{
       name : String(inputs.name),
       author : String(inputs.author),
       description : String(inputs.description),
